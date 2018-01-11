@@ -1,9 +1,7 @@
 # LinuxSetups 
 Almost based on Ubuntu 16.04
 * [List](#list)
-
 * [License](#license)
-
 * [Update](#update)
 
 <br>
