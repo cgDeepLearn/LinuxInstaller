@@ -1,19 +1,19 @@
 
 # Ubuntu 16.04 安装docker
-1. 切换到root权限或者使用sudo(下列命令均使用)
+1. 切换到`root`权限或者使用`sudo`(下列命令均使用)
 
-2. 升级source列表并保证https和ca整数成功安装
+2. 升级source列表并保证`https`和`ca`整数成功安装
 ```
 # apt-get update
 # apt-get install apt-transport-https ca-certificates
 ```
 
-3. 增加新的GPG 密钥
+3. 增加新的`GPG` 密钥
 ```
 # apt-key adv --keyserver hkp://p80.pool.sks-keyservers.net:80 --recv-keys 58118E89F3A912897C070ADBF76221572C52609D
 ```
 
-4. 新增或编辑source列表里的docker.list文件
+4. 新增或编辑source列表里的`docker.list`文件
 ```
 vim /etc/apt/sources.list.d/docker.list  //如果不存在就新增
 ```
@@ -36,7 +36,7 @@ deb https://apt.dockerproject.org/repo ubuntu-xenial main
 apt-cache policy docker-engine
 ```
 
-9. 从14.04版本以上开始docker推荐安装linux-image-extra
+9. 从14.04版本以上开始docker推荐安装`linux-image-extra`
 ```
 # apt-get install linux-image-extra-$(uname -r)
 ```
@@ -50,7 +50,7 @@ apt-cache policy docker-engine
 ```
 
 
-11. 安装docker-compose
+11. 安装`docker-compose`(可选)
 ```
 curl -L https://github.com/docker/compose/releases/download/1.18.0/docker-compose-`uname -s`-`uname -m` > /usr/local/bin/docker-compose  # 此命令安装的1.18.0版本，可以将1.18.0换成你想要安装的版本
 chmod +x /usr/local/bin/docker-compose
@@ -75,4 +75,4 @@ pip install docker-compose
 ```
 pip uninstall docker-compose
 ```
-**Have fun with doker!**
+**Have fun with docker!**
