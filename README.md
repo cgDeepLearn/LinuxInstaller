@@ -1,16 +1,14 @@
 # LinuxSetups 
 Almost based on Ubuntu 16.04
-* [List](#List)
-<br>
+* [List](#list)
 
-* [License](#License)
-<br>
+* [License](#license)
 
-* [update](#update)
+* [Update](#update)
 
 <br>
 
-## <a name="List"></a>List
+### <a name="list"></a>List
 * [docker](docs/docker/install-docker.md)
     * install docker
     * use
@@ -20,8 +18,8 @@ Almost based on Ubuntu 16.04
     * redis
     * mongodb
 
-## <a name="License"></a>License
+### <a name="license"></a>License
 
 <br>
 
-## <a name="update"></a>update 
+### <a name="update"></a>Update 
