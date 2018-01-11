@@ -6,7 +6,7 @@ Almost based on Ubuntu 16.04
 
 <br>
 
-### <a name="list"></a>List
+### list
 * [docker](docs/docker/install-docker.md)
     * install docker
     * use
@@ -16,8 +16,8 @@ Almost based on Ubuntu 16.04
     * redis
     * mongodb
 
-### <a name="license"></a>License
+### license
 
 <br>
 
-### <a name="update"></a>Update 
+### update 
