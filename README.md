@@ -10,9 +10,9 @@ Almost based on Ubuntu 16.04
 * [docker](docs/docker/install-docker.md)
     * install docker
     * use
-* [databases](docs/databases/index.md)
-    * MySQL
-    * Postgresql
+* [databases](docs/databases/README.md)
+    * [MySQL](docs/databases/mysql.md)
+    * [PostgreSQL](docs/databases/postgresql.md)
     * redis
     * mongodb
 
