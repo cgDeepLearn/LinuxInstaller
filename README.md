@@ -11,7 +11,7 @@ Mostly based on Ubuntu 16.04
 ## list
 
 * Python-libs
-  * [Celery](docs/python-lib/celery.md)
+  * [Celery](docs/python-lib/Celery.md)
 * [docker](docs/docker/install-docker.md)
   * install docker
   * use
