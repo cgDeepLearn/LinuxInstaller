@@ -2,13 +2,13 @@
 
 ## 目录
 
-* [Redis](#Redis)
-* [Celery](#Celery)
+* [Redis](#redis)
+* [Celery](#celery)
   * [简介](#简介)
-  * [安装Celery](#安装Celery)
+  * [安装Celery](#安装celery)
   * [示例](#简单示例)
   * [进阶用法](#进阶用法)
-* [Flower](#Flower)
+* [Flower](#flower)
 
 ## Redis
 
