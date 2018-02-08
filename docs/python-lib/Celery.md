@@ -273,8 +273,11 @@ def period_task(self):
 [2018-02-08 11:03:46,367: INFO/MainProcess] Received task: tasks.period_task[88fa4886-d6d4-4aea-92d5-b7e876f75737]  
 [2018-02-08 11:03:46,368: WARNING/ForkPoolWorker-1] period task done: 88fa4886-d6d4-4aea-92d5-b7e876f75737
 [2018-02-08 11:03:46,369: INFO/ForkPoolWorker-1] Task tasks.period_task[88fa4886-d6d4-4aea-92d5-b7e876f75737] succeeded in 0.0007591797038912773s: None
-
 ```
+
+config中schedule可以为crontab，例如每分钟:`'schedule': crontab(minute='*/1')`。
+crontab详细参数请参看[crontab-schedules](http://docs.celeryproject.org/en/latest/userguide/periodic-tasks.html#crontab-schedules)
+
 
 #### 链式任务
 

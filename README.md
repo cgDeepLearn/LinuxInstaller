@@ -1,6 +1,6 @@
 # LinuxSetups 
 
-[查看wiki吧](https://github.com/cgDeepLearn/LinuxSetups/wiki) : https://github.com/cgDeepLearn/LinuxSetups/wiki
+查看wiki: https://github.com/cgDeepLearn/LinuxSetups/wiki
 
 
 * [List](#list)
