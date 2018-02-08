@@ -1,5 +1,15 @@
 # Celery + Redis/RabbitMQ + Flower
 
+## 目录
+
+* [Redis](#Redis)
+* [Celery](#Celery)
+  * [简介](#简介)
+  * [安装Celery](#安装Celery)
+  * [示例](#简单示例)
+  * [进阶用法](#进阶用法)
+* [Flower](#Flower)
+
 ## Redis
 
 请参考[Redis](../databases/redis.md)部分
@@ -15,29 +25,29 @@ Celery工作原理如下：
 
 ### 简介
 
-- Brokers
+* Brokers
 
 `brokers` 中文意思为中间人，在这里就是指任务队列本身，Celery 扮演生产者和消费者的角色，`brokers` 就是生产者和消费者存放/拿取产品的地方(队列)
 
 常见的 brokers 有 `rabbitmq`、`redis`、`Zookeeper` 等
 
-- Result Stores / Backend
+* Result Stores / Backend
 
 顾名思义就是结果储存的地方，队列中的任务运行完后的结果或者状态需要被任务发送者知道，那么就需要一个地方储存这些结果，就是 Result Stores 了
 
 常见的 backend 有 `redis`、`Memcached` 甚至常用的数据库(`mysql`, `postgresql`等)都可以。
 
-- Workers
+* Workers
 
 就是 Celery 中的工作者，类似与生产/消费模型中的消费者，其从队列中取出任务并执行
 
-- Tasks
+* Tasks
 
 就是我们想在队列中进行的任务，一般由用户、触发器或其他操作将任务入队，然后交由 workers 进行处理。
 
 下面我们用`redis`作为`celery`的`broke`r和`backend`作为使用示例
 
-### 安装celery 
+### 安装Celery
 
 ```python pip安装celery以及Python对redis的支持
 pip install celery
@@ -48,7 +58,7 @@ pip install redis
 
 我们用`redis`作为`broker`和`backend`，下面我们来编写`tasks`和`workers`
 
-- tasks.py
+* tasks.py
 
 ```python tasks.py
 from celery import Celery
@@ -71,7 +81,7 @@ def add(x, y):
 [2017-02-07 16:13:56,267: INFO/MainProcess] celery@master ready.
 ```
 
-- trigger.py
+* trigger.py
 
 触发任务:我们每次运行trigger就把随机生成的两个数加起来的(当然你也可以通过命令行传参)
 
@@ -101,9 +111,9 @@ print('task done: {}'.format(result.get()))
 
 上面的装饰器`app.task`实际上是将一个正常的函数修饰成了一个 `celery task` 对象，所以这里我们可以给修饰器加上参数来决定修饰后的 `task` 对象的一些属性。
 
-- 首先，我们可以让被修饰的函数成为 `task` 对象的绑定方法，这样就相当于被修饰的函数 `add` 成了 `task` 的实例方法，可以调用 `self` 获取当前 `task` 实例的很多状态及属性。
+* 首先，我们可以让被修饰的函数成为 `task` 对象的绑定方法，这样就相当于被修饰的函数 `add` 成了 `task` 的实例方法，可以调用 `self` 获取当前 `task` 实例的很多状态及属性。
 
-- 其次，我们也可以自己复写 `task` 类然后让这个自定义 `task` 修饰函数 `add` ，来做一些自定义操作。
+* 其次，我们也可以自己复写 `task` 类然后让这个自定义 `task` 修饰函数 `add` ，来做一些自定义操作。
 
 下面用几个例子说明
 
@@ -119,11 +129,11 @@ class MyTask(celery.Task):
     def on_success(self, retval, task_id, args, kwargs):
         print 'task done: {0}'.format(retval)
         return super(MyTask, self).on_success(retval, task_id, args, kwargs)
-    
+
     def on_failure(self, exc, task_id, args, kwargs, einfo):
         print 'task fail, reason: {0}'.format(exc)
         return super(MyTask, self).on_failure(exc, task_id, args, kwargs, einfo)
- 
+
 @app.task(base=MyTask)
 def divide(x, y):
     if y == 0:
