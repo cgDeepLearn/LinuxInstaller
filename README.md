@@ -1,6 +1,7 @@
 # LinuxSetups 
 
-Mostly based on Ubuntu 16.04
+[查看wiki吧](https://github.com/cgDeepLearn/LinuxSetups/wiki) : https://github.com/cgDeepLearn/LinuxSetups/wiki
+
 
 * [List](#list)
 * [License](#license)
