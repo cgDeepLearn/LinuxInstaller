@@ -19,7 +19,7 @@
   * [MySQL](docs/databases/mysql.md)
   * [PostgreSQL](docs/databases/postgresql.md)
   * [redis](docs/databases/redis.md)
-  * [MongoDB](README.md)
+  * [MongoDB](docs/databases/mongodb.md)
 
 ## license
 
