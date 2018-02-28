@@ -298,5 +298,7 @@ $> mongo --host xxx.mongodb.rds.aliyuncs.com:3717 --authenticationDatabase admin
 #### 客户端使用Connection String URI连接实例 （****部分替换为为root密码）：
 
 ```
-mongodb://root:****@xxx.mongodb.rds.aliyuncs.com:3717/admin?replicaSet=mgset-4843525
+mongodb://root:****@xxx.mongodb.rds.aliyuncs.com:3717/admi?replicaSet=mgset-4843525
 ```
+
+副本集名称:replicaSet=mgset-4843525换成你的

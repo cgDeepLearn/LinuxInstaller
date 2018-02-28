@@ -11,11 +11,12 @@
 
 ## list
 
-* Python-libs
+* [Python-libs](docs/python-lib/README.md)
   * [Celery](docs/python-lib/Celery.md)
+  * [tensorflow](docs/python-lib/Tensorflow.md)
 * [docker](docs/docker/install-docker.md)
 
-* Databases
+* [Databases](docs/databases/README.md)
   * [MySQL](docs/databases/mysql.md)
   * [PostgreSQL](docs/databases/postgresql.md)
   * [redis](docs/databases/redis.md)
