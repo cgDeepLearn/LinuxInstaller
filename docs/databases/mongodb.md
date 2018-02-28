@@ -3,10 +3,23 @@
 ## 目录
 
 - [安装](#安装)
+  - 导入软件源公钥
+  - 为`mongodb`创建软件源list文件
+  - 更新软件源并安装`mongodb`
 - [配置](#配置)
-- [连接](#连接)
+  - [开机启动](#开机启动)
+  - service服务
+  - 本地连接
+  - 允许远程访问
 - [创建管理员帐号与数据库](#创建管理员帐号与数据库)
-- [阿里云数据库MongoDB](#阿里云数据库MongoDB)
+  - 创建管理员帐号
+  - 创建数据库
+- [阿里云数据库MongoDB](#阿里云数据库)
+  - 创建实例
+  - 重置密码
+  - 白名单配置
+  - 网络设置
+  - 连接云数据库
 
 ## 安装
 
@@ -39,7 +52,7 @@ sudo apt-get install -y mongodb-org
 sudo apt-get install -y mongodb-org=3.2.9 mongodb-org-server=3.2.9 mongodb-org-shell=3.2.9 mongodb-org-mongos=3.2.9 mongodb-org-tools=3.2.9
 ```
 
-## 配置
+##配置
 
 ### 开机启动
 
@@ -88,8 +101,6 @@ sudo service mongod start　　#启动服务
 sudo service mongod restart #重新启动服务
 sudo service mongod status #查看状态
 ```
-
-## 连接
 
 ### 本地连接
 
@@ -246,19 +257,46 @@ $> mongo test --authenticationDatabase admin -u testuser -p
 # 输入password
 ```
 
-## 阿里云数据库MongoDB
+## 阿里云数据库
 
 ### 创建实例
 
+进入阿里云管理控制台 -->> 点击云数据库MongoDB版 -->> 选区然后新建实例 -->>点击实例ID进入基本信息
+
+### 重置密码
+
+点击基本信息下的账号管理旁的重置密码 -->> 重置密码
+该密码为admin数据库下的拥有root权限的root账号的密码
+
+### 网页登陆数据管理控制台
+
+点击基本信息 -->> 实例关系下的Primary/Secondary登陆 -->> 输入数据库用户名(root)-数据库名(admin)-密码 -->> 登陆创建用户或者数据库等操作
+
 ### 白名单配置
+
+点击数据安全性 -->> 添加你的ECS服务器的内网IP
+
+这样你的内网ECS服务器就可以访问你的云数据库MongoDB了
+
+若想外网也能访问，请点击 数据库连接 -->> 公网连接 -->> 申请公网地址
 
 ### 网络设置
 
 确保ECS和云数据库MongoDB是同一个网络(经典网络或专有网络)
 
+如果你的ECS为专有网络，你的MongoDB为经典网络，请点击 数据库连接 -->> 内网连接 -->> 右上角切换为专有网络 -->> 等待创建即可
+
 ### 连接云数据库
+
+#### 使用Mongo Shell连接
 
 ```shell
 $> mongo --host xxx.mongodb.rds.aliyuncs.com:3717 --authenticationDatabase admin -u root -p
 # xxx为你的云数据库节点名称，有两个：primary(具有读写权限)和second(只读)
+```
+
+#### 客户端使用Connection String URI连接实例 （****部分替换为为root密码）：
+
+```
+mongodb://root:****@xxx.mongodb.rds.aliyuncs.com:3717/admin?replicaSet=mgset-4843525
 ```
