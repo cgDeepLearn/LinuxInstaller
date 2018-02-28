@@ -1,5 +1,13 @@
 # Ubuntu16.04安装、配置MongoDB
 
+## 目录
+
+- [安装](#安装)
+- [配置](#配置)
+- [连接](#连接)
+- [创建管理员帐号与数据库](#创建管理员帐号与数据库)
+- [阿里云数据库MongoDB](#阿里云数据库MongoDB)
+
 ## 安装
 
 ### 导入软件源公钥
@@ -186,7 +194,7 @@ net:
 
 ```
 
-### 连接
+### shell连接
 
 ```shell
 $> mongo --host host:port/db -u root -p
@@ -238,15 +246,17 @@ $> mongo test --authenticationDatabase admin -u testuser -p
 # 输入password
 ```
 
-## 连接阿里云数据库MonogDB
+## 阿里云数据库MongoDB
 
-###创建实例
+### 创建实例
 
 ### 白名单配置
 
-###确保ECS和云数据库MongoDB是同一个网络(经典网络或专有网络)
+### 网络设置
 
-### 连接
+确保ECS和云数据库MongoDB是同一个网络(经典网络或专有网络)
+
+### 连接云数据库
 
 ```shell
 $> mongo --host xxx.mongodb.rds.aliyuncs.com:3717 --authenticationDatabase admin -u root -p
