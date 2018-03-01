@@ -1,5 +1,7 @@
 # pipenv安装使用
 
+pipenv库:https://github.com/pypa/pipenv
+
 ## 安装
 
 ```shell
@@ -70,9 +72,32 @@ Launching subshell in virtual environment. Type 'exit' to return.
 
 /home/xxx/.local/share/virtualenvs/myproject-xxxxxxxx/bin/python
 
-- pipenv install requests 安装相关模块并加入到Pipfile
+- pipenv install requests : 安装相关模块并加入到Pipfile
 
-- pipenv install django==1.11 安装固定版本模块并加入到Pipfile
+- pipenv install django==1.11 : 安装固定版本模块并加入到Pipfile
+- pipenv install pytest --dev : 安装开发依赖(Adding pytest to Pipfile's [dev-packages]...)
+
+- pipenv lock
+
+```shell
+$ pipenv lock
+Assuring all dependencies from Pipfile are installed...
+Locking [dev-packages] dependencies...
+Locking [packages] dependencies...
+Note: your project now has only default [packages] installed.
+To install [dev-packages], run: $ pipenv install --dev
+```
+
+- pipenv install --dev  : Install all dev dependencies:
+
+```shell
+$ pipenv install --dev
+Pipfile found at /Users/xxx/repos/Pipfile. Considering this to be the project home.
+Pipfile.lock out of date, updating...
+Assuring all dependencies from Pipfile are installed...
+Locking [dev-packages] dependencies...
+Locking [packages] dependencies...
+```
 
 - pipenv graph : 查看目前安装的库及其依赖
 
@@ -97,3 +122,63 @@ requests==2.18.4
 
 可以设置国内源：Pipfile文件中[source]下面url属性，比如修改成：
 url = "https://pypi.tuna.tsinghua.edu.cn/simple"
+
+### Full Usage
+
+```
+$ pipenv
+Usage: pipenv [OPTIONS] COMMAND [ARGS]...
+
+Options:
+  --update         Update Pipenv & pip to latest.
+  --where          Output project home information.
+  --venv           Output virtualenv information.
+  --py             Output Python interpreter information.
+  --envs           Output Environment Variable options.
+  --rm             Remove the virtualenv.
+  --bare           Minimal output.
+  --completion     Output completion (to be eval 'd).
+  --man            Display manpage.
+  --three / --two  Use Python 3/2 when creating virtualenv.
+  --python TEXT    Specify which version of Python virtualenv should use.
+  --site-packages  Enable site-packages for the virtualenv.
+  --version        Show the version and exit.
+  -h, --help       Show this message and exit.
+
+
+Usage Examples:
+   Create a new project using Python 3.6, specifically:
+   $ pipenv --python 3.6
+
+   Install all dependencies for a project (including dev):
+   $ pipenv install --dev
+
+   Create a lockfile containing pre-releases:
+   $ pipenv lock --pre
+
+   Show a graph of your installed dependencies:
+   $ pipenv graph
+
+   Check your installed dependencies for security vulnerabilities:
+   $ pipenv check
+
+   Install a local setup.py into your virtual environment/Pipfile:
+   $ pipenv install -e .
+
+   Use a lower-level pip command:
+   $ pipenv run pip freeze
+
+Commands:
+  check      Checks for security vulnerabilities and against PEP 508 markers
+             provided in Pipfile.
+  clean      Uninstalls all packages not specified in Pipfile.lock.
+  graph      Displays currently–installed dependency graph information.
+  install    Installs provided packages and adds them to Pipfile, or (if none
+             is given), installs all packages.
+  lock       Generates Pipfile.lock.
+  open       View a given module in your editor.
+  run        Spawns a command installed into the virtualenv.
+  shell      Spawns a shell within the virtualenv.
+  sync       Installs all packages specified in Pipfile.lock.
+  uninstall  Un-installs a provided package and removes it from Pipfile.
+```
