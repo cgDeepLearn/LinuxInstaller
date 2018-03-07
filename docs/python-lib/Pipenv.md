@@ -182,3 +182,20 @@ Commands:
   sync       Installs all packages specified in Pipfile.lock.
   uninstall  Un-installs a provided package and removes it from Pipfile.
 ```
+
+### issues
+
+如果之前安装过`Annaconda`，`pipenv install`出现了下列问题，请先`conda update python`
+
+```
+ERROR: The executable /home/xxx/.virtualenvs/mynews-BcpTHAaR/bin/python is not functioning
+ERROR: It thinks sys.prefix is '/home/xxx/program/mynews' (should be '/home/cg/.virtualenvs/mynews-BcpTHAaR')
+ERROR: virtualenv is not compatible with this system or executable
+
+File "/home/xxx/anaconda3/lib/python3.6/site-packages/pipenv/core.py", line 343, in ensure_pipfile
+    project.create_pipfile(python=python)
+  File "/home/xxx/anaconda3/lib/python3.6/site-packages/pipenv/project.py", line 435, in create_pipfile
+    data[u'requires'] = {'python_version': python_version(self.which('python'))[:len('2.7')]}
+TypeError: 'NoneType' object is not subscriptable
+
+```
