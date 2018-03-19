@@ -13,6 +13,7 @@
 * Python-libs
   * [Pipenv](docs/python-lib/Pipenv.md)
   * [Celery](docs/python-lib/Celery.md)
+  * [Cookiecutter](docs/python-lib/Cookiecutter.md)
   * [tensorflow](docs/python-lib/Tensorflow.md)
 
 * [docker](docs/docker/install-docker.md)
