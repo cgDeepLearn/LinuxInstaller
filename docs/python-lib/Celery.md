@@ -1,4 +1,4 @@
-# Celery + Redis/RabbitMQ + Flower
+# Celery + Redis/RabbitMQ + Flower + Supervisor
 
 ## 目录
 
@@ -9,6 +9,7 @@
   * [示例](#简单示例)
   * [进阶用法](#进阶用法)
 * [Flower](#flower)
+* [Supervisor](#supervisor)
 
 ## Redis
 
@@ -398,3 +399,55 @@ Broker URL和其他配置选项能够通过一个标准的Celery选项来指定:
 
 ![flower-monitor](../../pics/flower-monitor.png)
 
+## Supervisor
+
+使用`supervisor`管理`celery· worker程序
+
+### 安装supervisor
+
+```
+sudo apt-get install supervisor
+```
+
+### 编辑配置文件
+
+```
+sudo vim /etc/supervisor/conf.d/celery.conf  
+# conf.d下文件会包含进supervisord.conf
+# 应用分开配置更清晰，管理更方便
+```
+
+编写`celery.conf`:
+
+```conf
+[program: mypro_celeryworker]
+
+command = /home/cg/.virtualenvs/mynews-a9sIuhQX/bin/celery -A mypro worker # 请更换为项目虚拟环境目录下的celery
+directory = /home/projects/mypro  # 项目目录
+stdout_logfile = /var/log/supervisor/mypro_celeryworker.log # supervisor执行时的日志
+stdout_logfile_maxbytes = 1MB  #日志大小
+stdout_logfile_backups = 10 # 日志备份数
+username = xxx  # 启动程序的用户
+autostart = true
+autorestart = true
+stopsignal = QUIT
+
+[program: mypro_celerybeat]
+
+command = /usr/bin/celery -A mypro beat # 请更换为项目虚拟环境目录下的celery
+directory = /home/projects/mypro  # 项目目录
+stdout_logfile = /var/log/supervisor/mypro_celerybeat.log # supervisor执行时的日志
+stdout_logfile_maxbytes = 1MB  #日志大小
+stdout_logfile_backups = 10 # 日志备份数
+username = xxx  # 启动程序的用户
+autostart = true
+autorestart = true
+stopsignal = QUIT
+```
+
+### 重启supervisor
+
+```sudo supervisorctl update```
+
+其他命令：
+```sudo supervisorctl start/stop/restart program_name```
