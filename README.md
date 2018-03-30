@@ -1,12 +1,9 @@
 # LinuxSetups 
 
+:wrench: Linux 下各种开发环境搭建, 点击分块查看详情
+
 查看wiki: https://github.com/cgDeepLearn/LinuxSetups/wiki
 
-* [List](#list)
-* [License](#license)
-* [Update](#update)
-
-<br>
 
 ## list
 
@@ -26,4 +23,16 @@
 
 ## license
 
+MIT License
+
 ## update 
+
+- [✔] Postgresql
+- [✔] MySQL
+- [✔] MongoDB
+- [✔] Docker
+- [✔] Pipenv
+- [✔] Celery
+- [✔] Cookiecutter
+- Tensorflow
+- redis
