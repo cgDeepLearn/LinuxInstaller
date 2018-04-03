@@ -27,12 +27,12 @@ MIT License
 
 ## update 
 
-- [✔] Postgresql
-- [✔] MySQL
-- [✔] MongoDB
-- [✔] Docker
-- [✔] Pipenv
-- [✔] Celery
-- [✔] Cookiecutter
-- Tensorflow
-- redis
+- [x] Postgresql
+- [x] MySQL
+- [x] MongoDB
+- [x] Docker
+- [x] Pipenv
+- [x] Celery
+- [x] Cookiecutter
+- [ ] Tensorflow
+- [ ] redis
