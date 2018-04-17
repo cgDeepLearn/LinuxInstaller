@@ -211,7 +211,7 @@ net:
 $> mongo --host host:port/db -u root -p
 # 本地连接 --host host:port/db可直接改成要连接的数据库即可
 # 安全连接请添加--authenticationDatabase(详细请查看下面创建账号)：
-$> mongo db --authenticationDatabase admin -u root -p
+$> mongo db --authenticationDatabase root -u root -p
 
 ```
 
@@ -253,7 +253,7 @@ Successfully added user: { "user" : "testuser", "roles" : [ "readWrite" ] }
 使用testuser登陆test数据库：
 
 ```shell
-$> mongo test --authenticationDatabase admin -u testuser -p
+$> mongo test --authenticationDatabase test -u testuser -p
 # 输入password
 ```
 
