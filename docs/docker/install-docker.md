@@ -101,9 +101,11 @@ docker-compose --version
 rm /usr/local/bin/docker-compose
 ```
 
+或者使用`sudo apt-get install docker-compose`
+
 **有时curl会失败，使用pip安装也可以**
 
-- 安装
+- pip方式安装
 
 ```
 pip install docker-compose
