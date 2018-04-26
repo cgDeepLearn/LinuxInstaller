@@ -4,7 +4,7 @@
 
 ### 1. 切换到`root`权限或者使用`sudo`(下列命令均使用)
 
-### 2. 升级source列表并保证`https`和`ca`整数成功安装
+### 2. 升级source列表并保证`https`和`ca`证书成功安装
 
 ```
 # apt-get update
