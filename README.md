@@ -12,6 +12,7 @@
   * [x] [Celery](docs/python-lib/Celery.md)
   * [x] [Cookiecutter](docs/python-lib/Cookiecutter.md)
   * [x] [tensorflow](docs/python-lib/Tensorflow.md)
+  * [ ] [Ansible](docs/python-lib/Ansible.md)
 
 * [x] [docker](docs/docker/install-docker.md)
 
@@ -28,14 +29,15 @@ MIT License
 
 ## update 
 
-- [x] Postgresql
-- [x] MySQL
-- [x] MongoDB
-- [x] Docker
-- [x] Pipenv
-- [x] Celery
-- [x] Cookiecutter
-- [ ] Tensorflow
-- [ ] redis
-- [ ] Hadoop
-- [ ] Spark
+* [x] Postgresql
+* [x] MySQL
+* [x] MongoDB
+* [x] Docker
+* [x] Pipenv
+* [x] Celery
+* [x] Cookiecutter
+* [ ] Tensorflow
+* [ ] redis
+* [ ] Hadoop
+* [ ] Spark
+* [ ] Ansible
