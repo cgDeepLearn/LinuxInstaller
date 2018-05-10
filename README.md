@@ -15,6 +15,7 @@
   * [ ] [Ansible](docs/python-lib/Ansible.md)
 
 * [x] [docker](docs/docker/install-docker.md)
+* [x] [gitlab](docs/dev-envs/gitlab.md)
 
 * Databases
   * [x] [MySQL](docs/databases/mysql.md)
@@ -36,6 +37,7 @@ MIT License
 * [x] Pipenv
 * [x] Celery
 * [x] Cookiecutter
+* [X] Gitlab
 * [ ] Tensorflow
 * [ ] redis
 * [ ] Hadoop
