@@ -2,8 +2,6 @@
 
 :wrench: Linux 下各种开发环境搭建, 点击分块查看详情
 
-查看wiki: https://github.com/cgDeepLearn/LinuxSetups/wiki
-
 
 ## list
 
@@ -43,3 +41,7 @@ MIT License
 * [ ] Hadoop
 * [ ] Spark
 * [ ] Ansible
+
+## wiki
+
+查看wiki(待更新): https://github.com/cgDeepLearn/LinuxSetups/wiki

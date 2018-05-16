@@ -11,7 +11,7 @@ sudo apt-get install curl openssh-server ca-certificates postfix
 
 ## 3.添加清华镜像源
 
-- 新人Gitlab的GPG公钥
+- 添加Gitlab的GPG公钥
 
 ```
 curl https://packages.gitlab.com/gpg.key 2> /dev/null | sudo apt-key add - &>/dev/null
@@ -25,7 +25,7 @@ curl https://packages.gitlab.com/gpg.key 2> /dev/null | sudo apt-key add - &>/de
 deb https://mirrors.tuna.tsinghua.edu.cn/gitlab-ce/ubuntu xenial main
 ```
 
-## 4.安装gitlab-ce:
+## 4.安装gitlab-ce
 
 ```
 sudo apt-get update
